@@ -19,7 +19,7 @@ namespace CityInfo.API.Controllers
 
         }
 
-        [HttpGet("/{id}")]
+        [HttpGet("{id}")]
         public IActionResult GetCity(int id)
         {
             var CityToReturn =
@@ -29,10 +29,11 @@ namespace CityInfo.API.Controllers
                 return NotFound();
             }
             return Ok(CityToReturn);
-             
-        }
-        [HttpPost]
 
+        }
+        /* [HttpPost]
+        {
+        } */
 
     }
 }
