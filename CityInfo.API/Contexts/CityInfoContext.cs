@@ -35,8 +35,14 @@ namespace CityInfo.API.Contexts
                     Id = 3,
                     Name = "Paris",
                     Description = "The one with that big tower."
+                },
+                new City()
+                {
+                    Id = 4,
+                    Name = "Boise",
+                    Description = "The one where everybody is moving to. Don't come here, it's a desert. It's ugly. Please, I beg you not to come here."
                 });
-            Model.Entity<PointOfInterest()
+            modelBuilder.Entity<PointOfInterest>()
                 .HasData(
                 new PointOfInterest()
                 {
@@ -53,10 +59,51 @@ namespace CityInfo.API.Contexts
                     Description = "A 102-story skyscraper located in Midtown Manhattan."
                 },
                 new PointOfInterest()
-                //{
-                //    Id = 3,
-                //    CityId = 
-                //}
+                {
+                    Id = 3,
+                    CityId = 2,
+                    Name = "Cathedral of Our Lady",
+                    Description = "A Gothic style cathedral, conceived by architects Jan and Pierre"
+                },
+                new PointOfInterest()
+                {
+                    Id = 4,
+                    CityId = 2,
+                    Name = "Antwerp Central Station",
+                    Description = "The finest example of railway architecture in Belgium."
+                },
+                new PointOfInterest()
+                {
+                    Id = 5,
+                    CityId = 3,
+                    Name = "Eiffel Tower",
+                    Description = "A wrought iron lattice tower on the Champ de Mars."
+                },
+                 new PointOfInterest()
+                 {
+                     Id = 6,
+                     CityId = 3,
+                     Name = "The Louvre",
+                     Description = "The world's largest museum."
+                 },
+                 new PointOfInterest()
+                 {
+                     Id = 7,
+                     CityId = 4,
+                     Name = "Old Idaho State Penitentiary",
+                     Description = "Some say you can find ghosts inside."
+                 },
+                 new PointOfInterest()
+                 {
+                     Id = 8,
+                     CityId = 4,
+                     Name = "The Basque Musuem & Cultural Center",
+                     Description = "Located in the heart of downtown Boise. An interesting culture indeed."
+                 }
+
+
+
+
             base.OnModelCreating(modelBuilder);
         }
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
