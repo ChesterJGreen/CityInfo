@@ -43,5 +43,19 @@ namespace CityInfo.API.Repos
         {
             return _context.Cities.Any(c => c.Id == cityId);
         }
+
+        void ICityInfoRepository.AddPointOfInterestForCity(int cityId, PointOfInterest pointOfInterest)
+        {
+            var city = GetCity(cityId, false);
+            city.PointOfInterests.Add(pointOfInterest);
+        }
+        public void UpdatePointOfInterestForCity(int cityId, PointOfInterest pointOfInterest)
+        {
+
+        }
+        public bool Save()
+        {
+            return (_context.SaveChanges() >= 0);
+        }
     }
 }
