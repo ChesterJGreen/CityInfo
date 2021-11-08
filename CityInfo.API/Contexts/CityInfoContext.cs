@@ -52,8 +52,8 @@ namespace CityInfo.API.Contexts
                     Description = "The most visited urban park in th e United States."
                 },
                 new PointOfInterest()
-                { 
-                    Id= 2,
+                {
+                    Id = 2,
                     CityId = 1,
                     Name = "Empire State Building",
                     Description = "A 102-story skyscraper located in Midtown Manhattan."
@@ -102,7 +102,7 @@ namespace CityInfo.API.Contexts
                  }
 
 
-
+            );   
 
             base.OnModelCreating(modelBuilder);
         }
