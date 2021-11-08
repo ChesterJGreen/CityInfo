@@ -17,7 +17,7 @@ namespace CityInfo.API.Repos
         }
         public IEnumerable<City> GetCities()
         {
-           return _context.Cities.OrderBy(c =>c.Name).ToList();
+            return _context.Cities.OrderBy(c => c.Name).ToList();
         }
 
         public City GetCity(int cityId, bool includePointsOfInterest)
@@ -38,6 +38,10 @@ namespace CityInfo.API.Repos
         public IEnumerable<PointOfInterest> GetPointsOfInterestForCity(int cityId)
         {
             return _context.PointOfInterests.Where(p => p.CityId == cityId).ToList();
+        }
+        public bool CityExists(int cityId)
+        {
+            return _context.Cities.Any(c => c.Id == cityId);
         }
     }
 }
